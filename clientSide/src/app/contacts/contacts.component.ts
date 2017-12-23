@@ -6,6 +6,7 @@ import {Contact} from '../contact';
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css'],
+  //provide the service
   providers: [ContactService]
 })
 export class ContactsComponent implements OnInit {
@@ -15,13 +16,15 @@ export class ContactsComponent implements OnInit {
   last_name:string;
   phone:string;
 
-
+  //inject the dependency of contact service
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
+    //everytime component is load it will call the following component to retreive the data
     this.contactService.getContacts()
-      .subscribe(contacts =>
-      this.contacts = contacts);
+    //specify how we want the contacts to be saved as 
+    .subscribe( contacts => 
+    this.contacts = contacts);
   }
 
 }

@@ -16,6 +16,7 @@ router.get('/contacts', (req, res, next) => {
 //Add contact 
 router.post('/contact', (req, res, next) => {
     //logic to add contact
+    console.log('we reached this point');
     let newContact = new Contact ({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
