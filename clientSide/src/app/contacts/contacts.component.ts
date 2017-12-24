@@ -30,6 +30,10 @@ export class ContactsComponent implements OnInit {
     this.contactService.addContact(newContact)
       .subscribe(contact => {
         this.contacts.push(contact);
+        this.contactService.getContacts()
+        //specify how we want the contacts to be saved as 
+          .subscribe( contacts => 
+        this.contacts = contacts);
       })
   }
 
