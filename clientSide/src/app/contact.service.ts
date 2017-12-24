@@ -13,9 +13,7 @@ export class ContactService {
   //retreiving ContactService
   getContacts() {
     return this.http.get('http://localhost:3000/api/contacts')
-    .map(res => {
-      console.log(res)
-      res.json()});
+    .map(res => res.json());
   }
 
   //add contact method
@@ -30,7 +28,7 @@ export class ContactService {
   //delete method
   deleteContact(id) {
     return this.http.delete('http://localhost:3000/api/contact'+id)
-    .map(res => res.json)
+    .map(res => res.json());
   }
 
 

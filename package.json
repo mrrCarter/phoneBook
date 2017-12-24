@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mrrCarter/phoneBook#readme",
   "dependencies": {
+    "angular-cli": "^1.0.0-beta.28.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",

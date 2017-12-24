@@ -1,3 +1,44 @@
-<p>
-  contacts works!
-</p>
+<div>
+  <h1> Welcome to Phone Book</h1>
+  <!-- <h6>Please enter the information of the person you want to add:</h6> -->
+</div>
+<div class = "container">
+  <h6 class = "page-header"> Please enter the contact you want to add</h6>
+  <hr>
+  <form (submit) = "addContact()">
+    <div class = "form-group">
+      <label>First Name</label>
+      <input type = "text" [(ngModel)] = "first_name" name = "first_name" class = "form-control">
+    </div>
+  </form>
+  <form (submit) = "addContact()">
+      <div class = "form-group">
+        <label>Last Name</label>
+        <input type = "text" [(ngModel)] = "last_name" name = "last_name" class = "form-control">
+      </div>
+    </form>
+    <form (submit) = "addContact()">
+        <div class = "form-group">
+          <label>Phone No.</label>
+          <input type = "text" [(ngModel)] = "phone" name = "phone" class = "form-control" required>
+        </div>
+        <input type="submit" class = "btn btn btn-success" value = "Add">
+      </form>
+</div>
+<hr>
+<div class = "container">
+  <div *ngFor = "let contact of contacts">
+    <div class = "col-md-3">
+      {{contact.first_name}}
+    </div>
+    <div class = "col-md-3">
+      {{contact.last_name}}
+    </div>
+    <div class = "col-md-3">
+        {{contact.phone}}
+    </div>
+    <div class = "col-md-3">
+        <input type="button" (click) = "deleteContact(contact._id)" value="Delete" class="btn btn-danger">
+    </div>
+  </div>
+</div>
